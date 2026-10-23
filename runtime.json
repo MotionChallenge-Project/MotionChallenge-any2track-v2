@@ -1,0 +1,21 @@
+{
+  "id": "any2track-v2-g1-v1",
+  "entrypoint": "adapter:create",
+  "control_period_s": 0.02,
+  "reference_offsets_s": [
+    0.0,
+    0.02
+  ],
+  "reference_history_s": 0,
+  "reference_preview_s": 0.02,
+  "state_access": "privileged-state-v0",
+  "action_mode": "joint-pd-feedforward",
+  "weights": "checkpoints/policy.onnx",
+  "weights_url": "https://drive.usercontent.google.com/download?id=1XG_-GP5svz_4TGh484X900dbctibZGAm&export=download",
+  "weights_sha256": "1320bddd4b981876e84243c0d336c8eaef57e202499b694cfbdc626fab3972c1",
+  "inference_config": "policy.json",
+  "inference_config_sha256": "b8a51b1bbe6582a866ad710d7207528081b624b2ff72baed13bc8583b5d4b52e",
+  "source_repository": "https://github.com/GalaxyGeneralRobotics/OpenTrack",
+  "source_commit": "cb9b751993a2483e5d1805a2565ddbfe950c04c9",
+  "official": false
+}

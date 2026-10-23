@@ -1,0 +1,12 @@
+{
+  "model": "any2track-v2",
+  "display_name": "Any2Track Generalist v2",
+  "submitter": "Motion Challenge",
+  "submission_type": "maintainer reproduction, not author submission",
+  "upstream": "https://github.com/GalaxyGeneralRobotics/OpenTrack",
+  "source_commit": "cb9b751993a2483e5d1805a2565ddbfe950c04c9",
+  "checkpoint_sha256": "1320bddd4b981876e84243c0d336c8eaef57e202499b694cfbdc626fab3972c1",
+  "author_inference_review": "pending",
+  "notes": "Official generalist v2 distilled from eight teachers. The downloaded configuration declares 156 observations and 29 actions. It was trained on all 40 LAFAN1 motions using a different retargeting pipeline; this is a known-data tracking comparison, not an unseen-motion generalization claim. Author-reported 40/40 uses the author setup and is not a Motion Challenge score.",
+  "benchmark_physics": "Shared canonical G1 nominal physics; not the author training simulator"
+}
