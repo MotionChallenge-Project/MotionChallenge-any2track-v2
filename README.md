@@ -1,10 +1,10 @@
 # Any2Track Generalist v2
 
-Independent Motion Challenge adapter for [Any2Track Generalist v2](https://github.com/GalaxyGeneralRobotics/OpenTrack).
+Independent MotionChallenge adapter for [Any2Track Generalist v2](https://github.com/GalaxyGeneralRobotics/OpenTrack).
 
 ```sh
-git clone --recurse-submodules https://github.com/MotionChallenge-Project/motion-challenge-any2track-v2.git
-cd motion-challenge-any2track-v2
+git clone --recurse-submodules https://github.com/MotionChallenge-Project/MotionChallenge-any2track-v2.git
+cd MotionChallenge-any2track-v2
 uv sync
 uv run evaluate.py
 ```

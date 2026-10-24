@@ -62,7 +62,18 @@ wheels = [
 ]
 
 [[package]]
-name = "motion-challenge"
+name = "motionchallenge-any2track-v2"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "motionchallenge-core" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "motionchallenge-core", editable = "MotionChallenge-Core" }]
+
+[[package]]
+name = "motionchallenge-core"
 version = "0.0.2.dev0"
 source = { editable = "MotionChallenge-Core" }
 dependencies = [
@@ -81,17 +92,6 @@ requires-dist = [
     { name = "pyyaml", specifier = "==6.0.3" },
     { name = "scipy", specifier = "==1.16.2" },
 ]
-
-[[package]]
-name = "motion-challenge-any2track-v2"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "motion-challenge" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "motion-challenge", editable = "MotionChallenge-Core" }]
 
 [[package]]
 name = "mujoco"
