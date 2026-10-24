@@ -8,7 +8,7 @@
   ],
   "reference_history_s": 0,
   "reference_preview_s": 0.02,
-  "state_access": "privileged-state-v0",
+  "state_access": "ideal-proprioceptive-no-position-v1",
   "action_mode": "joint-pd-feedforward",
   "weights": "checkpoints/policy.onnx",
   "weights_url": "https://drive.usercontent.google.com/download?id=1XG_-GP5svz_4TGh484X900dbctibZGAm&export=download",
@@ -17,5 +17,9 @@
   "inference_config_sha256": "b8a51b1bbe6582a866ad710d7207528081b624b2ff72baed13bc8583b5d4b52e",
   "source_repository": "https://github.com/GalaxyGeneralRobotics/OpenTrack",
   "source_commit": "cb9b751993a2483e5d1805a2565ddbfe950c04c9",
-  "official": false
+  "official": false,
+  "observation_contract": {
+    "admission_record": "admission.json",
+    "admission_sha256": "a8dc1a116882a8d55c998049e9bf231e5e3698d3d365d1212868db640dc275be"
+  }
 }

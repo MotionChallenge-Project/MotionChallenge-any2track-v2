@@ -28,3 +28,10 @@ The author README links the release folder. Its recorded v2 subfolder contains D
 One `uv run evaluate.py` produces one verified `result.json`: success, completion,
 three MPBPE alignments through first failure and the same three over the full motion.
 Both scopes use the same checkpoint and source revision; no branch switching is needed.
+
+## Observations
+
+Ideal proprioception, without robot world-position or contact feedback. [Checkpoint requirements](admission.json) · [Rules](MotionChallenge-Core/docs/OBSERVATIONS.md).
+
+Evaluation is unavailable until this checkpoint has a verified author-supported
+inference path under these rules. The admission record describes the gap.

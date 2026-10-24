@@ -1,0 +1,8 @@
+{
+  "schema": "MotionChallenge/observation-admission-v1",
+  "model": "any2track-v2",
+  "state_access": "ideal-proprioceptive-no-position-v1",
+  "checkpoint_sha256": "1320bddd4b981876e84243c0d336c8eaef57e202499b694cfbdc626fab3972c1",
+  "status": "not_admitted",
+  "handling": "This checkpoint has no verified deployment path under the current observation rules. No evaluation score is published."
+}
