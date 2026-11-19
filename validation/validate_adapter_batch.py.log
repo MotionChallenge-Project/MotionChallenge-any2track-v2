@@ -1,0 +1,18 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:1"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:2"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:3"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:4"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:5"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:6"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:7"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+   CUDA peer access:
+     Supported fully (all-directional)
+   Kernel cache:
+     /root/.cache/warp/1.18.0
+Module mujoco_warp._src.smooth b9cc505 load on device 'cuda:1' took 3.50 ms  (cached)
+{"status": "passed", "batch": 4096, "steps": 4, "partial_reset_step": 2, "sampled_rows": [0, 1, 2, 1024, 2048, 3072, 4095], "max_pd_command_abs_error": 7.003545761108398e-07, "elapsed_s": 0.8065596409142017, "peak_torch_allocated_bytes": 106880512, "graph_sha256": "c203c19ff478023d12ca8def6877201df2846b50fd4a9df63adf368fd1d73ab0", "adapter_source_sha256": {"tensor_common.py": "518fc3b40e5c38078d1d2fce4cf7133f6aa614b442152a01fdbbd5e600401a2e", "tensor_adapter.py": "82c4021714865388f8362dceba4b1f8522afbd3c94e7f3df41b5ef77de5a15c1"}, "reference": "4096-slot adapter versus independently reset 7-slot adapter; full forward without chunks"}

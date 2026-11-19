@@ -1,0 +1,61 @@
+{
+  "status": "independent_cache_pipeline_passed",
+  "dataset": "lafan",
+  "data_format": "original",
+  "clips": 40,
+  "entrypoint": "evaluate.py",
+  "cache_initial_state": "empty",
+  "input_sources": "Original dataset and SHA256-verified original model weights supplied explicitly",
+  "stages": [
+    "original artifact SHA256 verification",
+    "model-owned weight conversion",
+    "original motion preparation",
+    "full GPU batch rollout",
+    "independent CPU trace metric verification"
+  ],
+  "result_sha256": "0946fed64a562a1114c85162c38a334161ad315f43539636278112010e859828",
+  "runtime_sha256": "076f5caa866b192d6fbaf7a92788ad651d7c64bae973b6a242e068d6d72e66c7",
+  "current_frozen_runtime_sha256": "f54f431de6d60f2f3d7df7aea0d219f9fde5d61efde13300df02f0326dc063a8",
+  "same_current_frozen_runtime_identity": false,
+  "conversion_receipt_sha256": "1cc7e1c28fac51e608ff87d3c5b20991f8ebca4b96a8367666f547cd8a8d3d82",
+  "conversion_identity": {
+    "source_sha256": "1320bddd4b981876e84243c0d336c8eaef57e202499b694cfbdc626fab3972c1",
+    "converter": "convert_weights:prepare",
+    "model_code_sha256": {
+      "tensor_common.py": "518fc3b40e5c38078d1d2fce4cf7133f6aa614b442152a01fdbbd5e600401a2e",
+      "validate_batch.py": "9b9a640583cf0bea9c7df2cdff456ee7eb73d9badb2df1151e4d1784bc66356c",
+      "torch_graph.py": "7fd92161cb5465f0f2eb91429009dc3c6b6c4a4fb533300228f9c4262b6a4d4f",
+      "adapter.py": "d2f784c96bf32b34b429416f047f7e409cf7916082c6ce0e37db505103641bc6",
+      "convert_weights.py": "486998deef93d9f21d7ae21b2c9ab68721a7d300e4311fe934eb3b31b25df75f",
+      "validate_tensor.py": "039b77e5f8f23d48ab1f4acb86aff477244a9c9fa16759bdc3c936d6de510d60",
+      "evaluate.py": "f89bd2cf0333e7f5639431d6976253da3ad6ef8d490340362f4b4630d533d071",
+      "validate_onnxruntime.py": "f23741266d9f58f968ae9dd79e433d89bfbf1109472e4911d8a0d83bc9352746",
+      "validate_adapter_batch.py": "7abb76894134b370306387f327b771245bcf8870e365b7b6df34630590f0fcca",
+      "tensor_adapter.py": "82c4021714865388f8362dceba4b1f8522afbd3c94e7f3df41b5ef77de5a15c1"
+    },
+    "common_code_sha256": {
+      "torch_graph.py": "6020028fdd1c1419af845ef99ed2c3b9ef493b8374a550a4885c709eb97106d5",
+      "__init__.py": "4c5f9916a01bd744eb9782d883d0d2d4acfc938528b418b689365516e43928df"
+    },
+    "configuration_sha256": "b8a51b1bbe6582a866ad710d7207528081b624b2ff72baed13bc8583b5d4b52e",
+    "tensor_configuration": {
+      "tensor_conversion": "convert_weights:prepare",
+      "tensor_outputs": [
+        "continuous_actions"
+      ],
+      "tensor_entrypoint": "tensor_adapter:TensorAny2Track"
+    },
+    "artifacts": {}
+  },
+  "verification": {
+    "verification": "independent_cpu_trace_recomputation_passed",
+    "clips": 40,
+    "verifier_sha256": "822098272459bd44d65eb365cb0df9a5f3492410f63ab11cf055669b3a52237a",
+    "max_metric_abs_error": 2.2045279879367996e-08,
+    "result_sha256": "0946fed64a562a1114c85162c38a334161ad315f43539636278112010e859828",
+    "scope": "Trace consistency only; a separate clean rerun is still required"
+  },
+  "same_identity_dual_run_claim": false,
+  "numerical_reproduction_claim": false,
+  "scope": "Complete one-command pipeline with independent empty cache; no claim of same-identity or bitwise numerical reproduction."
+}

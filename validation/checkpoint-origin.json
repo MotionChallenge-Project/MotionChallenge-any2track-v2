@@ -1,0 +1,36 @@
+{
+  "status": "author_release_verified",
+  "model": "any2track-v2",
+  "author_release_url": "https://github.com/GalaxyGeneralRobotics/OpenTrack/blob/cb9b751993a2483e5d1805a2565ddbfe950c04c9/README.md#play-pretrained-checkpoints",
+  "artifact_url": "https://drive.usercontent.google.com/download?id=1XG_-GP5svz_4TGh484X900dbctibZGAm&export=download",
+  "sha256": "1320bddd4b981876e84243c0d336c8eaef57e202499b694cfbdc626fab3972c1",
+  "source_commit": "cb9b751993a2483e5d1805a2565ddbfe950c04c9",
+  "artifact_bytes": 8588031,
+  "verified_at": "2026-11-19T05:06:36.994457+00:00",
+  "verification_scope": "Official author release link chain and complete artifact download SHA256. The downloaded bytes exactly match the original checkpoint used in the recorded evaluations. Conversion and controller parity are separately recorded; this record does not assert rollout success.",
+  "download_verification": {
+    "method": "fresh_complete_https_download_on_mac",
+    "sha256_matches_evaluated_original": true
+  },
+  "release_evidence": [
+    {
+      "url": "https://github.com/GalaxyGeneralRobotics/OpenTrack/blob/cb9b751993a2483e5d1805a2565ddbfe950c04c9/README.md#play-pretrained-checkpoints",
+      "section": "Play pretrained checkpoints",
+      "release_folder": "https://drive.google.com/drive/folders/1wDL4Chr6sGQiCx1tbvhf9DowN73cP_PF"
+    },
+    {
+      "url": "https://drive.google.com/drive/folders/1wDL4Chr6sGQiCx1tbvhf9DowN73cP_PF",
+      "listed_file_id": "1_8ASA_-j0u-JUGoHUt93N6FLs4G9vsnX",
+      "listed_name": "general_tracker_lafan1_v2 Shared folder",
+      "snapshot_sha256": "042d831101143d212d000abfe8ec9c8171fd682aa4424e9d7fd09735353777f8"
+    },
+    {
+      "url": "https://drive.google.com/drive/folders/1_8ASA_-j0u-JUGoHUt93N6FLs4G9vsnX",
+      "listed_file_id": "1XG_-GP5svz_4TGh484X900dbctibZGAm",
+      "listed_name": "model.onnx Binary",
+      "snapshot_sha256": "d7eb19928f589b582ce4c688b439ab7d52946f3aa188a893909100807c0fb18b"
+    }
+  ],
+  "conversion_evidence": "mjwarp-network-parity.json",
+  "independent_onnxruntime_evidence": "onnxruntime-parity.json"
+}

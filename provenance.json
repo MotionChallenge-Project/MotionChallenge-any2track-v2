@@ -6,7 +6,7 @@
   "upstream": "https://github.com/GalaxyGeneralRobotics/OpenTrack",
   "source_commit": "cb9b751993a2483e5d1805a2565ddbfe950c04c9",
   "checkpoint_sha256": "1320bddd4b981876e84243c0d336c8eaef57e202499b694cfbdc626fab3972c1",
-  "author_inference_review": "pending",
+  "author_inference_review": "Pinned author observation assembly and original network parity passed; see validation/tensor-observation-parity.json and validation/onnxruntime-parity.json.",
   "notes": "Official generalist v2 distilled from eight teachers. The downloaded configuration declares 156 observations and 29 actions. It was trained on all 40 LAFAN1 motions using a different retargeting pipeline; this is a known-data tracking comparison, not an unseen-motion generalization claim. Author-reported 40/40 uses the author setup and is not a MotionChallenge score.",
   "benchmark_physics": "Shared canonical G1 nominal physics; not the author training simulator",
   "checkpoint_origin": {
@@ -19,5 +19,13 @@
     "verification": "The author README links the release folder. Its recorded v2 subfolder contains Drive file 1XG_-GP5svz_4TGh484X900dbctibZGAm; SHA256 pins the downloaded model.",
     "download_url": "https://drive.usercontent.google.com/download?id=1XG_-GP5svz_4TGh484X900dbctibZGAm&export=download",
     "sha256": "1320bddd4b981876e84243c0d336c8eaef57e202499b694cfbdc626fab3972c1"
+  },
+  "batch_inference_validation": {
+    "original_checkpoint_origin": "validation/checkpoint-origin.json",
+    "conversion": "validation/mjwarp-network-parity.json",
+    "full_batch_network": "validation/full-batch-parity.json",
+    "full_batch_adapter": "validation/full-batch-adapter.json",
+    "observation_history_reset": "validation/tensor-observation-parity.json",
+    "independent_onnxruntime": "validation/onnxruntime-parity.json"
   }
 }

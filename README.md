@@ -1,37 +1,39 @@
 # Any2Track Generalist v2
 
-Independent MotionChallenge adapter for [Any2Track Generalist v2](https://github.com/GalaxyGeneralRobotics/OpenTrack).
+GPU batch evaluation of the released Any2Track Generalist v2 checkpoint on LAFAN and BONES-SEED.
 
-```sh
+## Run
+
+```bash
 git clone --recurse-submodules https://github.com/MotionChallenge-Project/MotionChallenge-any2track-v2.git
 cd MotionChallenge-any2track-v2
-uv sync
-uv run evaluate.py
+uv sync --locked
+uv run evaluate.py --dataset lafan --data /path/to/lafan --device cuda:0 --output /path/to/results/any2track-v2-lafan
+uv run evaluate.py --dataset seed --data /path/to/g1.tar.gz --device cuda:0 --output /path/to/results/any2track-v2-seed
 ```
 
-The root `MotionChallenge-Core` submodule owns datasets, physics, failure rules and scoring.
-Local weights are reused; downloads are hash-checked. Results are stored outside Git.
-Use `--weights PATH --data PATH --offline` for cached artifacts.
+Download original [LAFAN](https://huggingface.co/datasets/lvhaidong/LAFAN1_Retargeting_Dataset) or [BONES-SEED](https://huggingface.co/datasets/bones-studio/seed) data and accept the upstream terms. The LAFAN directory contains `g1/*.csv`. The SEED archive is selected by Core's single public inclusion list. Motion data stays local.
 
-[Provenance](provenance.json)
+The command downloads and verifies the original model weights, converts them to safetensors plus a PyTorch execution graph, evaluates the complete selected dataset, and independently verifies the recorded trajectories. Use a fresh output directory for each run.
 
-MuJoCo 3.17 batch is the default. Use `--jobs 8` for parallel clips;
-download and evaluation progress updates every 5 seconds.
+```bash
+uv run evaluate.py --dataset lafan --data /path/to/lafan --weights /path/to/original-checkpoint --offline --device cuda:0 --output /path/to/results/any2track-v2-lafan
+```
 
+LAFAN uses 40 simulation slots and SEED uses 4096. Each control step runs one full-batch network forward. Finished slots are refilled in longest-motion-first order. `--slots` selects a different capacity. `--cache` sets the local preparation and model conversion cache.
 
-## Checkpoint source
+## Evaluation contract
 
-[GalaxyGeneralRobotics/OpenTrack](https://github.com/GalaxyGeneralRobotics/OpenTrack/blob/cb9b751993a2483e5d1805a2565ddbfe950c04c9/README.md#play-pretrained-checkpoints) · [LAFAN1 generalist v2 / checkpoints/model.onnx](https://drive.google.com/drive/folders/1wDL4Chr6sGQiCx1tbvhf9DowN73cP_PF). Author-released checkpoint.
+The control period is 20 ms with four 5 ms physics substeps. Sliding friction is 1.0 and the Newton solver uses at most 50 iterations. Core precomputes scoring reference FK before rollout and reads actual body poses from MJWarp.
 
-The author README links the release folder. Its recorded v2 subfolder contains Drive file 1XG_-GP5svz_4TGh484X900dbctibZGAm; SHA256 pins the downloaded model.
+Policies receive joint positions and velocities, root orientation, angular velocity, and root/joint reference motion. Actual global position and actual linear velocity are unavailable. Model-specific reference features and policy history are maintained by this repository.
 
-One `uv run evaluate.py` produces one verified `result.json`: success, completion,
-three MPBPE alignments through first failure and the same three over the full motion.
-Both scopes use the same checkpoint and source revision; no branch switching is needed.
+The original checkpoint SHA256 is `1320bddd4b981876e84243c0d336c8eaef57e202499b694cfbdc626fab3972c1`. `runtime.mjwarp.json` specifies its source, input configuration, observation contract and conversion entrypoint.
 
-## Observations
+## Validation
 
-Ideal proprioception, without robot world-position or contact feedback. [Checkpoint requirements](admission.json) · [Rules](MotionChallenge-Core/docs/OBSERVATIONS.md).
+`validation/mjwarp-network-parity.json` records original ONNX versus PyTorch batch parity. `validation/full-batch-parity.json` records a 4096-sample forward and original ONNX row checks. `validation/tensor-observation-parity.json` records original observation/history/reset and PD-target parity.
 
-Evaluation is unavailable until this checkpoint has a verified author-supported
-inference path under these rules. The admission record describes the gap.
+Each evaluation writes `result.json`, trace files, input hashes and `verification.json`. Dataset scores require full motion coverage and independent trace verification.
+
+`validation/full-batch-adapter.json` verifies 4096 active adapter states, a full forward and partial resets. `validation/onnxruntime-parity.json` checks the original ONNX in an independent ONNX Runtime environment.

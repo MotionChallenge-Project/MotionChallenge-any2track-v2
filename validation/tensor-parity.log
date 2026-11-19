@@ -1,0 +1,18 @@
+Warp 1.18.0 initialized:
+   CUDA Toolkit 13.4, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:1"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:2"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:3"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:4"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:5"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:6"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+     "cuda:7"   : "NVIDIA A100-SXM4-80GB" (79 GiB, sm_80, mempool enabled)
+   CUDA peer access:
+     Supported fully (all-directional)
+   Kernel cache:
+     /root/.cache/warp/1.18.0
+Module mujoco_warp._src.smooth b9cc505 load on device 'cuda:1' took 1.56 ms  (cached)
+{"status": "passed", "steps": 24, "batch": 7, "joint_order": "reversed canonical names", "partial_reset_step": 11, "partial_reset_slots": [1, 4], "observation_max_abs_error": 2.384185791015625e-07, "network_max_abs_error": 2.4437904357910156e-06, "joint_target_max_abs_error_rad": 2.4437904357910156e-06, "reference": "Original adapter.py observations and original ONNX per sample", "history": "Matched final joint targets isolate observation and inference parity", "author_source": {"repository": "https://github.com/GalaxyGeneralRobotics/OpenTrack", "commit": "cb9b751993a2483e5d1805a2565ddbfe950c04c9", "path": "track_mj/envs/g1_tracking_dagger/play/play_g1_env_tracking_general.py", "url": "https://raw.githubusercontent.com/GalaxyGeneralRobotics/OpenTrack/cb9b751993a2483e5d1805a2565ddbfe950c04c9/track_mj/envs/g1_tracking_dagger/play/play_g1_env_tracking_general.py", "sha256": "18305859a3e1aadeaa88eb681b5235055194ca53faf0819378c17caecfef774d"}, "author_observation_max_abs_error": 0.0, "forbidden_actual_translation_velocity_counterfactual": "passed"}

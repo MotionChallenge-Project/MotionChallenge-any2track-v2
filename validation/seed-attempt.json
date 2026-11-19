@@ -1,0 +1,11 @@
+{
+  "status": "full_rollout_and_independent_trace_verified",
+  "dataset": "seed",
+  "clips": 129561,
+  "scored_result": true,
+  "result_sha256": "f7cf21fcbbae9a14cb8a0331f48f0f656adf98820735877d0e06b93bf6d4391a",
+  "initial_verification_error": "First failure differs",
+  "resolution": "The independent CPU verifier now applies the existing float32 reference quantization boundary before CPU FK; strict failure thresholds, rollout and scores are unchanged.",
+  "evidence": "seed-verification-boundary.json",
+  "verification": "seed-mjwarp.json"
+}
